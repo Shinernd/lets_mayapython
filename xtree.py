@@ -1,4 +1,3 @@
-
 import maya.cmds as cmds
 import random
 
@@ -32,6 +31,8 @@ cmds.select(myPyramids[count])
 cmds.move(0, 20.1, 0.2)
 cmds.scale(1, 1, 1)
 cmds.rotate(90, 0, 0)
+for i in range (80):
+    cmds.setKeyframe(v=i*45, at='rotateZ', t=i*5)
 cmds.polyColorPerVertex(colorRGB=[1,1,0], colorDisplayOption=True)
 count = count + 1
 
@@ -40,4 +41,6 @@ cmds.select(myPyramids[count])
 cmds.move(0, 20.1, -0.2)
 cmds.scale(1, 1, 1)
 cmds.rotate(270, 0, 45)
+for j in range (80):
+    cmds.setKeyframe(v=(j+1)*45, at='rotateZ', t=j*5)
 cmds.polyColorPerVertex(colorRGB=[1,1,0], colorDisplayOption=True)
